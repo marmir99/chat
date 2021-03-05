@@ -1,0 +1,9 @@
+nazwa1 haslo1
+nazwa2 haslo2
+nazwa3 haslo3
+nazwa4 haslo4
+nazwa5 haslo5
+nazwa6 haslo6
+nazwa7 haslo7
+nazwa8 haslo8
+nazwa9 haslo9

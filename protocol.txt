@@ -1,0 +1,30 @@
+PROTOCOL
+
+Na pocz¹tku dzia³ania serwera na podstawie listy u¿ytkowników tworzy on dwie tabele – nazw u¿ytkowników oraz hase³, dla danego u¿ytkownika posiada on taki sam indeks w obu tabelach. Plik jest ci¹giem linii zbudowanych w ten sposób: nazwa u¿ytkownika, spacja, has³o\n. 
+Po poprawnym zalogowaniu u¿ytkownik otrzymuje swój typ oraz ukazuj¹ mu siê mo¿liwe opcje dalszego dzia³ania, wyboru dokonuje przez wprowadzenie odpowiedniej liczby.
+
+W programie istniej¹ 2 kolejki komunikatów. Jedna kolejka obs³uguje jedynie wywo³ania zwi¹zanie z wysy³aniem wiadomoœci – do pojedynczego u¿ytkownika lub do grupy oraz odbiór wiadomoœci, druga zaœ jest odpowiedzialna za pozosta³e funkcje.
+Ka¿da wybrana przez u¿ytkownika opcja generuje odpowiedni komunikat, ka¿dy z tych komunikatów ma inny typ:
+1 – chêæ zalogowania
+2 – wylogowanie
+3 – wys³anie wiadomoœci do u¿ytkownika
+4 – wyœwietlenie zalogowanych u¿ytkowników
+5 – wyœwietlenie dostêpnych grup
+6 – wyœwietlenie cz³onków grupy
+7 – wys³anie wiadomoœci do grupy
+8 – dodanie do grupy
+9 – opuszczenie grupy
+Przy logowaniu ka¿dy u¿ytkownik odbiera ten sam typ równy 1035. W tym komunikacie, jeœli podano odpowiedni login oraz has³o, u¿ytkownik odbiera równie¿ typ wiadomoœci, indywidualny dla ka¿dego, tworzony w taki sposób, ¿e w tabeli z nazwami u¿ytkowników odnajdujemy danego u¿ytkownika, a nastêpnie indeksowi dodajemy 10. Po uzyskaniu komunikatu o prawid³owym logowaniu u¿ytkownik odbiera ju¿ tylko wiadomoœci swojego typu.
+
+Obs³uga grup
+Wszystkie czynnoœci zwi¹zane z obs³ug¹ grupy odbywaj¹ siê na pliku, zbudowanym w ten sposób:
+Nazwa grupy
+U¿ytkownik
+U¿ytkownik
+…
+
+Nazwa grupy
+…
+Przy uruchomieniu czatu zapisani do grup zapisani s¹ pewni u¿ytkownicy. Wszelkie zmiany (usuwanie/zapisywanie u¿ytkowników) s¹ obowi¹zuj¹cymi przy kolejnych uruchomieniach.
+Jeœli u¿ytkownik chce wys³aæ wiadomoœæ do grupy to sam równie¿ j¹ otrzymuje. Jeœli u¿ytkownik zapisze siê do grupy to otrzymuje jedynie wiadomoœci otrzymane od momentu zapisania, a jeœli j¹ opuœci to nadal mo¿e odebraæ wiadomoœci wys³ane przed jej opuszczeniem.
+
